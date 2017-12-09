@@ -1,0 +1,21 @@
+// Requirements
+// ============
+@import "normalize";
+@import "compass";
+@import "susy";
+
+$susy: (
+  columns: 12,
+  gutters: 1/4,
+  math: fluid,
+  output: float,
+  gutter-position: before,
+  container: 88%,
+  container-position: center,
+  column-width: false,
+  global-box-sizing: border-box,
+  last-flow: to,
+  flow: ltr,
+);
+
+
