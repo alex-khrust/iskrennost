@@ -1,0 +1,236 @@
+<!-- <?php
+ 
+    // Проверяем, если была нажата кнопка отправить то идем дальше.
+    if(isset($_POST["send"])){
+ 
+    /* Присваиваем переданные данные обычным переменным. Таким образом, мы застрахуемся от хостингов, которые не поддерживают глобальные переменные. */
+    if(isset($_POST["name"])){ $name = $_POST["name"]; }
+    if(isset($_POST["email"])){ $email = $_POST["email"]; }
+    if(isset($_POST["subject"])){ $subject = $_POST["subject"]; }
+    if(isset($_POST["message"])){ $message = $_POST["message"]; }
+ 
+    /* Объявляем переменную, в которой содержится email администратора, которому отправим письмо. */
+    $to = "st.alex.ser@gmail.com";
+ 
+ 
+    /* Перед тем как отправить письмо, проверяем, если были заполнены все поля формы. Это делается для браузера Safari и Internet Explorer ниже 10-той версий, так как они не поддерживают атрибут required тега input */
+    if($name == " ") echo "<strong>Ошибка:</strong> Вы не указали Ваше имя. <br />";
+    if($email == " ") echo "<strong>Ошибка:</strong> Вы не указали Ваш E-mail. <br />";
+    if($subject == " ") echo "<strong>Ошибка:</strong> Вы не указали тему сообшения. <br />";
+    if($message == " ") echo "<strong>Ошибка:</strong> Вы нам написали пустое сообщение. <br />";
+
+    // Если все поля заполнены, то можем отправлять письмо .
+    if($name != " " && $email != " " && $subject != " " && $message != " "){
+ 
+        $header = "От: $name <$email>"; // Указываем имя и email отправителя.
+ 
+        // Отправляем письмо
+        $send = mail($to,$subject,$message,$header);
+ 
+        if($send) echo "Письмо отправлена успешно!";
+        else echo "Ошибка при отправке письма.";
+    }
+ 
+}// Закрываем блок if (isset($_POST["send"]))
+?>
+ -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width">
+	<meta name="description" content="Искренность - Общественная организация" />
+	<meta name="keywords" content="Искренность Мариуполь, общественная организация Мариуполь, благотворительность Мариуполь, помощь детям Мариуполь"/>
+	<title>Искренность</title>
+	
+	<!-- stylesheet -->
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="shortcut icon" href="img/favicon.png" type="image/png">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<!-- owl-carousel -->
+	<link rel="stylesheet" href="css/owl.carousel.min.css">
+	<link rel="stylesheet" href="css/owl.theme.default.min.css">
+
+</head>
+<body class="cbp-spmenu-push">
+	<header>
+		<div class="container">
+			<div class="logo">
+				<a href="https://docs.google.com/document/d/1O3LBSQJTwT7el5Z9ZE-lTvsWQv2ZmiMnhz2WhHrHeJk/edit">
+					<img src="img/logo-iskrennost.png" alt="">
+					<h2><span>Искренность</span> <br> Общественная организация</h2>
+				</a>
+			</div>
+			<nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s2">
+				<ul id="accordion" class="menu accordion">
+					<li><a href="index.html">Главная</a></li>
+					<li><a href="site/news/news.html">Новости</a></li>
+					<li><a class="submenu-link">Деятельность</a>
+						<ul class="submenu">
+							<li><a href="site/work/work_1_pg1.html">Интернатные учреждения</a></li>
+							<li><a href="site/work/work_2_pg1.html">Дети</a></li>
+							<li><a href="site/work/work_3_pg1.html">Ветераны</a></li>
+							<li><a href="site/work/work_4_pg1.html">Помощь тяжелобольным детям</a></li>
+							<li><a href="site/work/work_5_pg1.html">Малообеспеченные семьи</a></li>
+							<li><a href="site/work/work_6_pg1.html">Спортивные занятия и мероприятия</a></li>
+							<li><a href="site/work/work_7_pg1.html">Организация различных мероприятй и проектов</a></li>
+							<li><a href="site/work/work_8_pg1.html">Общественная деятельнотсь</a></li>
+							<li><a href="site/work/work_9_pg1.html">Деятельность Молодежного центра</a></li>
+						</ul>
+					</li>
+					<li><a class="submenu-link">Галерея</a>
+						<ul class="submenu">
+							<li><a href="site/gallery/gallery_foto.html">Фото</a></li>
+							<li><a href="site/gallery/gallery_video.html">Видео</a></li>
+						</ul>
+					</li>
+					<li><a href="site/about.html">О нас</a></li>
+					<li><a class="active" href="site/contacts.html">Контакты</a></li>
+				</ul>
+			</nav>
+			<button id="showRightPush" class="cmn-toggle-switch cmn-toggle-switch__htra" ><span>toggle menu</span></button>
+		</div>
+	</header>
+
+	
+	<div class="title">
+		<h2 class="lifted">Контакты</h2>
+	</div>
+	
+	<section id="contacts">
+		
+		<div class="contacts__wrap">
+			<adress class="contacts__wrap__adress">
+				<h2>Адрес:</h2>
+				<p>
+					<span class="fa fa-home"></span>
+					ул. Итальянская, 42<br>
+					г. Мариуполь<br>
+					Украина 87515
+				</p>
+			</adress>
+			<div class="contacts__wrap__phone">
+				<h2>Телефоны:</h2>
+				<p>
+					<span class="fa fa-phone"></span>
+					<a href="tel:+3800970242919">(097) 02-42-919</a><br>
+					Председатель ОО "Искренность"<br> Ковтун В.И.
+				</p>
+				<p>
+					<span class="fa fa-phone"></span>
+					<a href="tel:+3800983738489">(098) 37-38-489</a><br>
+					Секретарь ОО "Искренность"<br> Халиулова А.Ш.
+				</p>
+			</div>
+			<div class="contacts__wrap__email">
+				<h2>Email:</h2>
+				<p>
+					<span class="fa fa-envelope-o"></span>
+					<a href="iskrennostt@gmail.com?subject=Обращение от гостя сайта">iskrennostt@gmail.com</a>
+				</p>
+			</div>
+		</div>
+		
+		
+		<div class="form__wrapper">
+			<h2>Форма обратной связи</h2>
+				<p>Здесь вы можете отправить нам сообщение</p>
+				<!-- ниже убрал у value первую букву v - отключиил, и в textarea перенести значение из value в содержание -->
+				<form autocomplete="on" action="<?=$_SERVER[ ' PHP_SELF ' ]?>" name="myForm" method="post" >
+	      			<input type="text" placeholder="Имя" name="name" required="" alue="<?=$_POST[ ' name ' ]?>"/>
+							
+					<input type="text" placeholder="Email" name="email" required=" " alue="<?=$_POST[ ' email ' ]?>"/>
+					
+					<input type="text" placeholder="Тема" name="subject" required=" " alue="<?=$_POST[ ' subject ' ]?>"/>
+					
+					<textarea cols="30" rows="5" placeholder="Сообщение" name="message" required=" " alue="<?=$_POST[ ' message ' ]?> "></textarea>
+					
+					<a href="" data-type="submit" name="send" class="btn-send">Отправить</a>
+					<a href="" data-type="reset" class="btn-reset">Очистить</a>
+					
+				</form>
+			</div>
+			
+			<div class="map">
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2716.3901289437053!2d37.55504885039298!3d47.0914221313155!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40e6e45dba364955%3A0x1d7e3f268d0cd150!2z0LLRg9C70LjRhtGPINCG0YLQsNC70ZbQudGB0YzQutCwLCA0Miwg0JzQsNGA0ZbRg9C_0L7Qu9GMLCDQlNC-0L3QtdGG0YzQutCwINC-0LHQu9Cw0YHRgtGMLCDQo9C60YDQsNC40L3QsA!5e0!3m2!1sru!2sua!4v1484584145885" width="100%" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
+			</div>
+		</section>
+		
+		
+		
+		
+		<footer>
+			<div class="foo__up">
+				<div class="container">
+					<div class="foo__up-left">
+					<h3>
+						Подписаться на рассылку наших новостей
+					</h3>
+					<form id="newsletter">
+					<div class="rel">
+					<div class="success" style="display: none;">Вы подписаны на нашу рассылку новостей!</div>
+					<label class="email invalid">
+					<input type="email" placeholder="Введите Ваш Email">
+					<!-- <span class="error">*This is not a valid email address.</span> -->
+					</label>
+					</div>
+					<a href="#" class="btn" data-type="submit">Подтверждение</a>
+					</form>
+				</div>
+				<div class="foo__up-right">
+					<h3>Мы в соцсети</h3>
+					<div class="socials">
+						<div class="socials__item vkontakte">
+							<a href="https://vk.com/iskrennost_mariupol"><span>ВКонтакте</span>
+							<i class="fa fa-vk" aria-hidden="true"></i>
+							</a>
+						</div>
+						<div class="socials__item facebook">
+							<a href="https://www.facebook.com/groups/oo.iskrennost"><span>facebook</span>
+							<i class="fa fa-facebook" aria-hidden="true"></i>
+							</a>
+						</div>
+						<div class="socials__item instagram">
+							<a href="https://www.instagram.com/iskrennost_org/"><span>instagram</span>
+							<i class="fa fa-instagram" aria-hidden="true"></i>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="foo__bottom">
+			<div class="container">
+				<div class="foo__bottom-copy">
+					«Искренность» - Общественная организация © 2004 - <?php echo date("Y") ?> | Privacy Policy <br>
+					Website designed by <a href="http://acx.esy.es">Alexander Khrustalev</a>
+				</div>
+				<div class="foo__bottom-rights">Частичное или полное копирование любых материалов <br>сайта возможно только с указанием ссылки на источник!
+				</div>
+			</div>
+		</div>
+	</footer>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<!-- vk-widget -->
+<script src="https://vk.com/js/api/openapi.js?139" type="text/javascript"></script>
+
+<script src="js/classie.js"></script>
+<script src="js/demo.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/jquery.hoverdir.js"></script>
+<script type="text/javascript">$(function() { $('#da-thumbs > li').hoverdir(); });</script>
+<script src="libs/imagefill/jquery-imagefill.js"></script>
+<script src="libs/imagesloaded/imagesloaded.pkgd.min.js"></script>
+<script src="libs/masonry/masonry.pkgd.min.js"></script>
+<script src="libs/fancybox/jquery.fancybox.min.js"></script>
+
+<script src="js/main.js"></script>
+
+
+
+</body>
+</html>
